@@ -1,0 +1,36 @@
+#header
+{
+	background-color: #FFDEAD;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+#my_name
+{
+	 float: left;
+	 margin-left:80px;
+	 font-size:30px;
+}
+#user_operate
+{
+	 float:right;
+	 margin-right:50px;
+}
+.login, .register
+{
+	display:block;
+	float:left;
+	 padding :5px 5px;
+	 border-radius:3px;
+}
+.separate_line
+{
+	display:block;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:3px;
+	float:left;
+}
+#sub_title
+{
+	 margin-left:80px;
+}
