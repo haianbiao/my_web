@@ -6,12 +6,13 @@ class Home_model extends CI_Model {
         parent::__construct();
     }
 
-    function do_read()
+    function do_read($offset, $limit)
     {
     	$sql = "SELECT  * 
     	             FROM article
-                           ORDER BY add_time DESC";
-    	 $query = $this->db->query($sql);
+                    ORDER BY add_time DESC
+                    LIMIT ?,  ?";
+    	 $query = $this->db->query($sql , array($offset, $limit));
 
     	 if($query->num_rows() > 0)
     	 {

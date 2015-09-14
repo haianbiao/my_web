@@ -1,14 +1,14 @@
-         <div id = "header">
+         <div class = "header "   id = "top">
                 <div   id = "my_name" >
-                            <a  href = "/my_web/index.php/home">Hai An Biao</a>
+                            <a  href = "/my_web/index.php/home">H.A.B</a>
                 </div>
                 <div id = "user_operate">
-                       <span  class = "login"><a  href = "/my_web/index.php/user/user_login">Login</a></span>
+                       <span  class = "login"><a  href = "/my_web/index.php/user/user_login">登录</a></span>
                        <span  class = "separate_line">|</span>
-                       <span  class = "register"><a  href = "/my_web/index.php/user/user_register">Register</a></span>
+                       <span  class = "register"><a  href = "/my_web/index.php/user/user_register">注册</a></span>
                        <div  class = "clear"></div>
                 </div>
                 <div  class = "clear">
-                <span  id = "sub_title">海不择细流，故能成其大；山不拒细壤，方能就其高</span>
+                <span  id = "sub_title">不积跬步,无以至千里；不积小流,无以成江海</span>
                 </div>
          </div>
