@@ -1,21 +1,23 @@
 #content
 {
 	 height:60%;
+	 min-height:700px;
 }
 #content_title
 {
       margin-top:20px;
-	margin-bottom:30px;
+      margin-bottom:30px;
 }
 #article_content
 {
       margin-top:10px;
-	margin-bottom:10px;
+       margin-bottom:10px;
+
 }
 #add_time
 {
-	margin-left:350px;
-	margin-top:30px;
+	margin-left:290px;
+	margin-top:60px;
 	margin-bottom:20px;
 }
 
@@ -28,19 +30,20 @@
 	 margin-left:50px;
 	 color:grey;
 }
+
 #right_content
 {
                float:left;
 	 padding :30px 80px;
-	 margin-top:50px;
+	 margin-top:40px;
 	 margin-left:70px;
-	 height:700px;
 	 color:grey;
 }
 
 #tag
 {
 	 margin-bottom:30px;
+	 margin-top:30px;
 }
 
 #latest_article
@@ -48,11 +51,24 @@
 	margin-top:30px;
 	margin-bottom:30px;
 }
+#tag  span
+{
+	display:block;
+	margin-top:6px;
+	margin-bottom:6px;
+}
+
+#friend_link  span
+{
+              display:block;
+	margin-top:6px;
+	margin-bottom:6px;
+}
 
 #latest_article  span
 {
 	display:block;
-	margin-top:6px;
+	margin-top:5px;
 	margin-bottom:6px;
 }
 #introduce
@@ -71,15 +87,40 @@
        padding: 3px 10px;
        margin-left:5px;
        margin-right:5px;
-       border: 1px solid  	#0000FF;
+       color:#2894FF;
 }
 .page_nav   a:hover
 {
        background-color:   	#0000FF;
+       color:white;
 }
 
 .page_nav strong
 {
-      margin-right:3px;
-      margin-left:3px;
+       padding: 3px 10px;
+       margin-left:5px;
+       margin-right:5px;
+       color:white;
+       background-color:   	#0000FF;
+}
+
+#comments
+{
+       margin-top:60px;
+}
+
+#back-to-top
+{
+       display:none;
+       width:50px;
+       height:50px;
+       background-color: #A9A9A9;
+       color:white;
+       text-align:center;
+       padding-top:8px; 
+}
+
+#comment  span
+{
+      display: block;
 }

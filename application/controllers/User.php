@@ -12,19 +12,20 @@ class User extends CI_Controller {
 	{
                          $data = array();
                          $name    = $this->input->post('name');
-	           $passwd = $this->input->post('passwd');
-	           $this->load->model('user_model');
-	            if($name &&  $passwd)
-                         {
-                        	     $user_id = $this->user_model->login($name, $passwd);  
-                        	     if($user_id)
+	                  $passwd = $this->input->post('passwd');
+	                  $this->load->model('user_model');
+	                  if($name &&  $passwd)
+                          {
+                        	     $user_arr = $this->user_model->login($name, $passwd);  
+                        	     if($user_arr)
                         	     {
-                        	     	$this->session->set_userdata('user_id', $user_id);
-                        	     	redirect("home");
+                            	     	$this->session->set_userdata('user_id', $user_arr['id']);
+                                         $this->session->set_userdata('user_name', $user_arr['name']);
+                            	     	redirect("home");
                         	     }
                         	     else
                         	     {
-                        	     	echo "user not exist";
+                        	     	     echo "user not exist";
                         	     }
                          }
                          else
@@ -37,15 +38,15 @@ class User extends CI_Controller {
 
 	public function user_register()
 	{
-	          $name    = $this->input->post('name');
-	          $passwd = $this->input->post('passwd');
+	             $name    = $this->input->post('name');
+	             $passwd = $this->input->post('passwd');
                         $this->load->model('user_model');
                         if($name &&  $passwd)
                         {
                         	     $result  = $this->user_model->register($name, $passwd);  
                         	     if($result)
                         	     {
-                        	     	redirect("home");
+                        	     	redirect("login");
                         	     }
                         }
                         else
@@ -60,5 +61,6 @@ class User extends CI_Controller {
 	function login_out()
 	{
 	       $this->session->sess_destroy(); 
+              redirect('home');
 	}
 }

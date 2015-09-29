@@ -1,6 +1,6 @@
 .header
 {
-	background-color:  #02DF82;
+	background-color:  #6FB7B7;
 	padding-top:30px;
 	padding-bottom:30px;
 }
@@ -8,7 +8,7 @@
 {
 	 float: left;
 	 margin-left:80px;
-	 font-size:30px;
+	 font-size:25px;
 }
 #user_operate
 {
@@ -19,8 +19,14 @@
 {
 	display:block;
 	float:left;
-	 padding :5px 5px;
+	 padding :2px 5px;
 	 border-radius:3px;
+}
+.login_out
+{
+	display:inline-block;
+	margin-left:-70px;
+	margin-top:5px;
 }
 .separate_line
 {

@@ -29,12 +29,25 @@ class User_model extends CI_Model {
               $query = $this->db->query($sql, array($user_name, $user_passwd));
               if($query->num_rows() > 0)
               {
-                    return  $query->row()->id;
+                    return  $query->row_array();
               }
               else
               {
                     return FALSE;
               }
+    }
+
+    function get_user_name_by_id($user_id)
+    {
+             $sql = "SELECT *
+                         FROM friends
+                         WHERE id = ?";
+              $query  = $this->db->query($sql, array($user_id));
+              if($query->num_rows() > 0)
+              {
+                     return $query->row()->name;
+              }
+              
     }
 
 
