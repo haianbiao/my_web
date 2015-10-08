@@ -10,6 +10,7 @@
 	<link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/common.css'; ?>" />
 	 <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/dashboard.css'; ?>" />
 	 <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/footer.css'; ?>" />
+    <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/editor/plugins/code/prettify.css'; ?>" />
 
 </head>
 <body>
@@ -73,6 +74,9 @@
 </div>
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script  src ="<?php echo base_url();?>assets/js/bootstrap.min.js" ></script>
+<script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/kindeditor.js"></script>
+<script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/plugins/code/prettify.js"></script>
+<script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/plugins/code/code.js"></script>
    <script>
       $(function()
       {
@@ -96,5 +100,23 @@
             });  
       });
    </script>
+   <script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id',{
+                     cssPath: '<?php echo base_url(); ?>assets/editor/plugins/code/prettify.css',
+                     items:[
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '/',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        'anchor', 'link', 'unlink'
+]
+                });
+                prettyPrint();
+        });
+</script>
 </body>
 </html>

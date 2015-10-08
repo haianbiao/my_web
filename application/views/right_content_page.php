@@ -57,18 +57,18 @@
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog  " role="document">
-                        <div class="modal-content">
+                        <div class="modal-content"  style = 'margin-top:200px'>
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">关于我</h4>
+                            <h4 class="modal-title" id="myModalLabel">任标</h4>
                           </div>
-                          <div class="modal-body" >
-                                       有时，不知怎么定义自己，半夜惊醒，不知自己是谁<br/>
-
-做一个独立，自制和有纪律的人<br/>
-
-是走入社会的那份平静，是对生命的不畏惧<br/>
-淡泊明志，宁静致远
+                          <div class="modal-body"  style = 'padding-bottom:20px'>
+                                       PHP开发工程师<br/>
+                                       现就职于京东<br/>
+                                       github账号: haianbiao@github.com<br/>
+                                       崇拜的语言 C  ,  C++ 和 Python<br/>
+                                       崇尚开源和黑客精神<br/>
+                                       欢迎交换链接
                           </div>
                         </div>
                       </div>
