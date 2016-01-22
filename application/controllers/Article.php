@@ -20,6 +20,7 @@ class Article extends CI_Controller {
                             $right_con['tags']    = $this->tag_model->get_tag_names();
                             $limit  = 5;
                             $right_con['my_latest_article'] = $this->home_model->get_latest_article($limit);
+                            $right_con['latest_comments'] = $this->comment_model->get_latest_comments();
                             $data['right_content']       = $this->load->view('right_content_page',  $right_con, TRUE);
                             $data['header']  = $this->load->view('header_page', NULL, TRUE);
                            $this->load->view('article_page', $data);

@@ -6,18 +6,17 @@
 #content_title
 {
       margin-top:20px;
-      margin-bottom:30px;
+      margin-bottom:20px;
 }
 #article_content
 {
       margin-top:10px;
-       margin-bottom:10px;
+       margin-bottom:30px;
 
 }
 #add_time
 {
-	margin-left:290px;
-	margin-top:60px;
+	margin-top:10px;
 	margin-bottom:20px;
 }
 
@@ -40,18 +39,22 @@
 	 color:grey;
 }
 
-#tag
+#tag,
+#latest_comment,
+#friend_link,
+#message_board
 {
 	 margin-bottom:30px;
-	 margin-top:30px;
+	 margin-top:50px;
 }
 
 #latest_article
 {
-	margin-top:30px;
+	margin-top:50px;
 	margin-bottom:30px;
 }
-#tag  span
+#tag  span,
+#latest_comment span
 {
 	display:block;
 	margin-top:6px;
@@ -77,6 +80,13 @@
 	margin-top:50px;
 	margin-left:5px;
 }
+
+#introduce span
+{ 
+	display:block;
+	margin-top:3px;
+	margin-bottom:5px;
+}
 .page_nav
 {
       margin-top:30px;
@@ -84,24 +94,24 @@
 }
 .page_nav   a 
 {
-       padding: 3px 10px;
+       padding: 8px 12px;
        margin-left:5px;
        margin-right:5px;
        color:#2894FF;
 }
 .page_nav   a:hover
 {
-       background-color:   	#0000FF;
-       color:white;
+       border:  1px solid #2894FF;
+       color:#2894FF;
 }
 
 .page_nav strong
 {
-       padding: 3px 10px;
+       padding: 8px 12px;
        margin-left:5px;
        margin-right:5px;
        color:white;
-       background-color:   	#0000FF;
+       background-color:   #2894FF;
 }
 
 #comments
@@ -114,7 +124,7 @@
        display:none;
        width:50px;
        height:50px;
-       background-color: #A9A9A9;
+       background-color: #BA55D3;
        color:white;
        text-align:center;
        padding-top:8px; 

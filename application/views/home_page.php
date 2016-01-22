@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>H.A.B</title>
+	      <title>广厦</title>
               <meta charset="utf-8">
               <meta http-equiv="X-UA-Compatible" content="IE=edge">
               <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta name="keywords" content="php,linux"/>
+              <meta name="description" content="记录一些技术积累和生活感悟" />
               <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/bootstrap.min.css'; ?>" />
 	<link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/head_title.css'; ?>" />
 	<link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/common.css'; ?>" />
 	 <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/dashboard.css'; ?>" />
 	 <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/footer.css'; ?>" />
+   <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/nprogress.css'; ?>" />
     <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/editor/plugins/code/prettify.css'; ?>" />
 
 </head>
@@ -26,9 +29,17 @@
                           {
                
                                   echo "<div  id = 'content_title'>";
-                                       echo  "<span style = 'font-size:28px'><a id = 'article_title' href='/my_web/index.php/article/show_article/".$row['id']."'> ".htmlspecialchars($row['title'])."</a></span>";
+                                       echo  "<span style = 'font-size:28px;'><a id = 'article_title' href='/my_web/index.php/article/show_article/".$row['id']."'> ".htmlspecialchars($row['title'])."</a></span>";
                                   echo "</div>";
+                                  echo "<div  id = 'add_time'>";
+                                        echo "<span style = 'margin-left:0px' >作者&nbsp;广厦</span>";
 
+                                       echo "<span style='margin-left:25px;margin-right:5px' ></span>";
+                                       echo "<a  style = 'color:grey' href='/my_web/index.php/article/show_article/".$row['id']."'>评论</a>";
+                                      echo "<span style = 'margin-left:30px;margin-right:5px' >发布于</span>";
+                                       echo  date('Y-m-d  H:i',$row['add_time']);
+            
+                                  echo "</div>";
                                   echo "<div  id = 'article_content'>";
                                            if(mb_strlen($row['content']) <= 300)
                                            {
@@ -40,16 +51,7 @@
                                            }
                                   echo "</div>";
 
-                                  echo "<div  id = 'add_time'>";
-                                       echo "<span class='glyphicon glyphicon-time' style = 'margin-right:5px' aria-hidden='true'></span>";
-                                       echo  date('Y-m-d  H:i',$row['add_time']);
-                                       if($this->session->userdata('user_name'))
-                                       {
-                                               echo "<span class='glyphicon glyphicon-pencil' style='margin-left:15px;margin-right:5px' aria-hidden='true'></span>";
-                                               echo "<a  style = 'color:grey' href='/my_web/index.php/article/show_article/".$row['id']."'>评论</a>";
-                                       }
-                                  echo "</div>";
-                                  echo "<hr >";
+                                  echo "<hr  style = 'color:red'/>";
                               
                           }
 
@@ -68,18 +70,20 @@
          </div>
          <div  class = "clear">
          </div>
-         <div id = "footer">
-            <span>H.A.B&copy;2015</span>
-        </div>
+        <?php   $this->load->view('footer_page'); ?>
 </div>
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script  src ="<?php echo base_url();?>assets/js/bootstrap.min.js" ></script>
+<script  src ="<?php echo base_url();?>assets/js/nprogress.js" ></script>
 <script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/kindeditor.js"></script>
 <script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/plugins/code/prettify.js"></script>
 <script charset="utf-8" src="<?php echo base_url(); ?>assets/editor/plugins/code/code.js"></script>
    <script>
       $(function()
       {
+              NProgress.start();
+              NProgress.inc(0.2);
+               NProgress.inc(0.2);
          //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失  
             $(window).scroll(function(){  
                 if ($(window).scrollTop()>260){  
@@ -99,6 +103,10 @@
                 return false;  
             });  
       });
+
+      $(window).load(function(){
+           NProgress.done(); 
+      })
    </script>
    <script>
         KindEditor.ready(function(K) {

@@ -1,6 +1,6 @@
 <div  id = "right_content">
              <div  id = "latest_article">
-                  <span  style ="border-bottom:1px solid   #d0d0d0;  font-size:25px;">
+                  <span  style ="border-bottom:1px solid   #d0d0d0;  font-size:25px;color:#7B68EE">
                         最新文章
                   </span>
                   <?php
@@ -18,7 +18,7 @@
                   ?>
              </div>
              <div  id = "tag">
-                 <span  style ="border-bottom:1px solid   #d0d0d0; font-size:25px;">
+                 <span  style ="border-bottom:1px solid   #d0d0d0; font-size:25px;color:#7B68EE">
                      标签
                  </span>
                  <span>
@@ -39,8 +39,29 @@
                       ?>
                  </span>
              </div>
+             <div  id = 'latest_comment'>
+                     <span  style ="border-bottom:1px solid   #d0d0d0; font-size:25px;color:#7B68EE">
+                              最新评论
+                     </span>
+                     <span>
+                              <?php
+                                   if(!empty($latest_comments))
+                                   {
+                                          foreach($latest_comments as $key => $row)
+                                          {
+                                                 echo "<div style = 'margin-top:5px;width:180px;word-break:break-all'>".$row['user_name'].'在《'.$row['title'].'》的评论:&nbsp;<font style="color:#6A5ACD">'.$row['comment_content']."</font></div>";
+                                          }
+                                   }
+                                   else
+                                   {
+                                           echo "暂无评论";
+                                   }
+                              ?>
+                     </span>
+             </div>
+
              <div  id = "friend_link">
-                <span  style ="border-bottom:1px solid   #d0d0d0; font-size:25px;">
+                <span  style ="border-bottom:1px solid   #d0d0d0; font-size:25px;color:#7B68EE">
                          友情链接
                  </span>
                  <span>
@@ -48,9 +69,15 @@
                    </span>
              </div>
 
+               <div  id = "message_board">
+                <span>      
+                         <a href = "<?php echo site_url('message_board/get_message'); ?>"    style ="color:grey;font-size:25px;color:#7B68EE">留言板</a>
+                 </span>
+             </div>
+
              <div  id = "introduce">
                     <!-- <span><a href='/my_web/index.php/introduce'>关于我</a></span> -->
-                     <span  style ="font-size:25px;margin-left:-5px" data-toggle="modal" data-target="#myModal">
+                     <span  style ="font-size:25px;margin-left:-5px;color:#7B68EE" data-toggle="modal" data-target="#myModal">
                       关于我
                     </span>
 
@@ -60,15 +87,14 @@
                         <div class="modal-content"  style = 'margin-top:200px'>
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">任标</h4>
+                            <h4 class="modal-title" id="myModalLabel" style = 'color:#8A2BE2;font-size:1.5em' >广&nbsp;厦</h4>
                           </div>
-                          <div class="modal-body"  style = 'padding-bottom:20px'>
-                                       PHP开发工程师<br/>
-                                       现就职于京东<br/>
-                                       github账号: haianbiao@github.com<br/>
-                                       崇拜的语言 C  ,  C++ 和 Python<br/>
-                                       崇尚开源和黑客精神<br/>
-                                       欢迎交换链接
+                          <div class="modal-body"  style = 'padding-bottom:20px;'>
+                                       <span>PHP开发工程师</span>
+                                       <span>现就职于京东</span>
+                                      <span>github账号: haianbiao@github.com</span>
+                                       <span>崇拜的语言 C  ,  C++ 和 Python</span>
+                                       <span>崇尚开源和黑客精神</span>
                           </div>
                         </div>
                       </div>

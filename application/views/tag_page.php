@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title> H.A.B</title>
+	<title> 广厦</title>
               <meta http-equiv="X-UA-Compatible" content="IE=edge">
               <meta name="viewport" content="width=device-width, initial-scale=1">
                <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/bootstrap.min.css'; ?>" />
@@ -41,6 +41,8 @@
                                   echo "<div  id = 'add_time'>";
                                         echo "<span class='glyphicon glyphicon-time' style = 'margin-right:5px' aria-hidden='true'></span>";
                                        echo  date('Y-m-d  H:i',$row['add_time']);
+                                      echo "<span class='glyphicon glyphicon-pencil' style='margin-left:30px;margin-right:5px' aria-hidden='true'></span>";
+                                       echo "<a  style = 'color:grey' href='/my_web/index.php/article/show_article/".$row['id']."'>评论</a>";
                                   echo "</div>";
                                    echo "<hr>";
                               
@@ -58,8 +60,7 @@
 	               ?>
               <div  class = "clear">
               </div>
-         <div id = "footer"></div>
-      <span>H.A.B&copy;2015</span>
+             <?php   $this->load->view('footer_page'); ?>
 </div>
 
 

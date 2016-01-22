@@ -22,22 +22,27 @@ class Comment_model extends CI_Model {
               $query = $this->db->query($sql, array($article_id));
               if($query->num_rows() > 0)
               {
-                    $data = $query->result_array();
-                    return  $this->get_detail_comment($data);
+                      return $query->result_array();
               }
 
               return array();
     }
 
-    function get_detail_comment($data)
+    function get_latest_comments()
     {
-             $this->load->model('user_model');
-             foreach($data as  $key => $row)
-             {
-                      $data[$key]['user_name'] = $this->user_model->get_user_name_by_id($row['user_id']);
-             }
+              $sql = "SELECT  title, user_name, comment.content as comment_content
+                       FROM comment
+                       INNER  JOIN article
+                       ON article.id = comment.article_id
+                       ORDER BY comment.add_time DESC
+                       LIMIT 5";
+              $query = $this->db->query($sql);
+              if($query->num_rows() > 0)
+              {
+                      return $query->result_array();
+              }
 
-             return $data;
+              return array();
     }
 
 

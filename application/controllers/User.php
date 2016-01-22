@@ -41,8 +41,13 @@ class User extends CI_Controller {
 	             $name    = $this->input->post('name');
 	             $passwd = $this->input->post('passwd');
                         $this->load->model('user_model');
+
                         if($name &&  $passwd)
                         {
+                                  if(mb_strlen($name) < 6)
+                                  {
+                                        exit('用户名不能少于六个字符');
+                                  }
                         	     $result  = $this->user_model->register($name, $passwd);  
                         	     if($result)
                         	     {

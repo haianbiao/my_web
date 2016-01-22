@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>H.A.B</title>
-  <meta charset="utf-8">
-  <title> hab</title>
-        <meta charset="utf-8">
+	<title>广厦</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet"  type="text/css"   href="<?php echo base_url().'assets/css/bootstrap.min.css'; ?>" />
@@ -33,36 +30,36 @@
                             echo "<div  id = 'article_content'>";
                                  echo  $full_article['content'];
                             echo "</div>";
-                            if($this->session->userdata('user_name'))
-                            {
-                                    echo "<div  id = 'comments'>";
-                                            echo "<span>发表评论</span>";
-                                            echo "<hr/>";
-                                            if(!empty($comments))
+                            echo "<div  id = 'comments'>";
+                                    echo "<span>发表评论</span>";
+                                    echo "<hr/>";
+                                    if(!empty($comments))
+                                    {
+                                            foreach($comments as $row)
                                             {
-                                                    foreach($comments as $row)
-                                                    {
-                                                           echo "<div  id = 'comment'>";
-                                                                   echo "<span style = 'color:#1DA55B'>".$row['user_name']."</span>";
-                                                                   echo "<span  style = 'margin-top:10px'>".$row['content']."</span>";
-                                                                   echo "<span  style = 'text-align:right;color:  #C0C0C0'>".date('Y-m-d H:i', $row['add_time'])."</span>";
-                                                           echo "</div>";
-                                                           echo  "<hr/>";
-                                                    }
+                                                   echo "<div  id = 'comment'>";
+                                                           echo "<span style = 'color:#1DA55B'>".$row['user_name']."</span>";
+                                                           echo "<span  style = 'margin-top:10px'>".htmlspecialchars($row['content'])."</span>";
+                                                           echo "<span  style = 'text-align:right;color:  #C0C0C0'>".date('Y-m-d H:i', $row['add_time'])."</span>";
+                                                   echo "</div>";
+                                                   echo  "<hr/>";
                                             }
+                                    }
 
-                                            echo "<div>";
-                                                      echo "<form   method = 'POST'  action = '".site_url('comment/store_comment')."'>";
-                                                            echo "<div><span class='glyphicon glyphicon-user' style = 'margin-right:15px' aria-hidden='true'></span><input type = 'text'  name = 'user_name'  value = '".$this->session->userdata('user_name')."'  readonly='readonly'  style = 'width:150px;padding-left:15px'/></div>";
-                                                            echo "<textarea  name = 'comment'  style = 'width:473px;height:139px;margin-top:20px'></textarea>";
-                                                            echo "<input  type = 'hidden' name = 'article_id'   value = '".$full_article['id']."'/>";
-                                                            echo "<div  style = 'margin-top:20px'>
-                                                                       <input  type = 'submit'    class = 'btn btn-primary' name = 'submit'  value = '评论'/>
-                                                                       </div>";
-                                                       echo "</form>";
-                                            echo "</div>";
+                                    echo "<div>";
+                                              echo "<form   method = 'POST'  action = '".site_url('comment/store_comment')."'>";
+                                                    echo "<div>姓名 <font style = 'color:red'>*</font><input type = 'text'  name = 'user_name'  value = ''  style = 'width:200px;margin-left:10px'/></div>";
+                                                    echo "<div style = 'margin-top:10px'>邮箱 <font style = 'color:red'>*</font><input type = 'text'  name = 'user_email'  value = ''  style = 'width:200px;margin-left:10px'/></div>";
+                                                    echo "<div style = 'margin-top:10px'>站点<input type = 'text'  name = 'web_site'  value = ''  style = 'width:200px;margin-left:20px'/></div>";
+                                                    echo "<span style = 'vertical-align:top;display:inline-block;margin-top:20px'>内容&nbsp;<font style = 'color:red;'>*</font></span><textarea  name = 'comment'  style = 'width:455px;height:109px;margin-top:20px;margin-left:10px'></textarea>";
+                                                    echo "<input  type = 'hidden' name = 'article_id'   value = '".$full_article['id']."'/>";
+                                                    echo "<div  style = 'margin-top:20px'>
+                                                               <input  type = 'submit'    class = 'btn btn-primary' name = 'submit'  value = '评论'/>
+                                                               </div>";
+                                               echo "</form>";
                                     echo "</div>";
-                          }
+                            echo "</div>";
+                          
 
                   }
                   else
@@ -77,9 +74,7 @@
          </div>
          <div  class = "clear">
          </div>
-         <div id = "footer">
-                <span>H.A.B&copy;2015</span>
-        </div>
+        <?php   $this->load->view('footer_page'); ?>
 </div>
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script  src ="<?php echo base_url();?>assets/js/bootstrap.min.js" ></script>
