@@ -21,7 +21,7 @@
                              忍耐，是一种态度，是一种认真，是一杯好酒；<br/>
                              超越，是一种追求，是一种认知，是一次提升。
                    </div>
-                   <div   style="min-height:400px;width:600px;margin:0 auto;margin-top:50px">
+                   <div   style="min-height:400px;width:600px;margin:0 auto;margin-top:50px;margin-bottom:30px">
                    <?php
                          if(!empty($message))
                          {
