@@ -65,7 +65,7 @@
                          友情链接
                  </span>
                  <span>
-                   <a href = "http://h5.mainphp.com/"  target="_blank">日光溪流</a>
+                   <a href = "http://www.superman2014.com"  target="_blank">日光溪流</a>
                    </span>
              </div>
 
